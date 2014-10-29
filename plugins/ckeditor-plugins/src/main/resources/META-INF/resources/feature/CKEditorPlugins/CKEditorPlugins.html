@@ -1,0 +1,52 @@
+<!--
+  Copyright 2014 Hippo B.V. (http://www.onehippo.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<div ng-controller="CKEditorPluginsCtrl">
+  <div class="panel panel-default">
+    <div class="panel-heading"><h3>{{plugin.name}}</h3></div>
+    <div class="panel-body">
+        <form novalidate name="documentsForm">
+            <div ng-show="documentTypes.length">
+                <h4>Add CKEditor plugin to following documents:</h4>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Document</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="doc in documentTypes" ng-form="documentsForm">
+                        <td>
+                            <input type="checkbox" checked="{{doc.checked}}" ng-model="doc.checked"/>
+                        </td>
+                        <td>{{doc.name}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+    <div class="panel-footer">
+        <div class="pull-right">
+            <button ng-disabled="documentsForm.$invalid" class="btn btn-primary" ng-click="addDocs()">Add CKEditor plugins</button>
+        </div>
+        <p class="clearfix">&nbsp;</p>
+    </div>
+  </div>
+</div>
+
+

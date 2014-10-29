@@ -39,6 +39,7 @@
   </properties>
 
   <modules>
+    <module>ckeditor-plugins</module>
     <module>banner-and-carousel</module>
     <module>bean-writer</module>
     <module>blog</module>

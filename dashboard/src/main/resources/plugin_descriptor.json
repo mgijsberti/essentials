@@ -358,6 +358,46 @@
     },
     {
         "@type": "plugin",
+        "id": "CKEditorPlugins",
+        "name": "CKEditor Plugins Support",
+        "icon" : "/essentials/images/icons/ckeditor.png",
+        "introduction": "With the CKEditor Plugins Support, you can select a number of CKEditor plugins, which can be installed for a selection of document types.",
+        "description": "<p>The CKEditor is enhanced with additional functionality. See for more information about the CKEditor : <a href='http://ckeditor.com/'>http://ckeditor.com</a></p><p>For more information about the CKEditor plugins support in Hippo <a href='http://www.onehippo.org/library/concepts/document-types/html-fields/ckeditor-plugins.html#add-an-existing-ckeditor-plugin'>http://www.onehippo.org</a>",
+        "imageUrls": [
+            "/essentials/images/screenshots/relateddocuments01.png"
+        ],
+        "documentationLink": "http://www.onehippo.org/library/concepts/document-types/html-fields/ckeditor-plugins.html#add-an-existing-ckeditor-plugin",
+        "parameterServiceClass": "org.onehippo.cms7.essentials.plugins.ckeditor.CKEditorParameterService",
+        "restClasses": ["org.onehippo.cms7.essentials.plugins.ckeditor.CKEditorResource"],
+        "type": "feature",
+        "vendor": {
+            "@type": "vendor",
+            "name": "Hippo",
+            "url": "http://www.onehippo.com"
+        },
+        "libraries": [
+            {
+                "items": [
+                    {
+                        "component": "CKEditorPlugins",
+                        "file": "CKEditorPlugins.js"
+                    }
+                ]
+            }
+        ],
+        "dependencies": [
+            {
+                "@type": "dependency",
+                "groupId": "org.onehippo.examples",
+                "artifactId": "ckeditor-plugins",
+                "scope": "compile",
+                "version": "1.0-SNAPSHOT",
+                "targetPom": "cms"
+            }
+        ]
+    },
+    {
+        "@type": "plugin",
         "id": "seoPlugin",
         "name": "Search engine optimization",
         "icon" : "/essentials/images/icons/seo.png",
