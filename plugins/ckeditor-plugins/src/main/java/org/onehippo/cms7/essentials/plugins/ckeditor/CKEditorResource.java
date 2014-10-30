@@ -122,7 +122,7 @@ public class CKEditorResource  extends BaseResource {
         if(newPlugins == null || newPlugins.isEmpty()){
             return existingPlugins;
         }
-        HashSet set = new HashSet();
+        HashSet set = new LinkedHashSet();
         List<String> existingPluginsList = convertToList(existingPlugins);
         set.addAll(existingPluginsList);
         List<String> newPluginList = convertToList(newPlugins);
@@ -154,6 +154,7 @@ public class CKEditorResource  extends BaseResource {
             setConfig(node, plugins);
         }
     }
+
     protected static void setConfig(Node node, String plugins) throws RepositoryException{
         String overlay = "{ extraPlugins: '"+plugins+"' }";
         log.info("Set property [{}] with value [{}] on node [{}]", CKEDITOR_CONFIG, plugins, node.getPath());
